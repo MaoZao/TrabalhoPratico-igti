@@ -7,13 +7,13 @@ variable "lambda_function_name" {
 }
 
 variable "key_pair_name" {
-  default = "ney-igti-teste"
+  default = "psalomao-igti-teste"
 }
 
 variable "airflow_subnet_id" {
-  default = "subnet-4cef5427"
+  default = "subnet-e0cf5a8b"
 }
 
 variable "vpc_id" {
-  default = "vpc-d724b4bc"
+  default = "vpc-262c414d"
 }

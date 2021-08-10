@@ -12,7 +12,7 @@ def handler(event, context):
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
                 LogUri='s3://datalake-psalomao-igti-tf/emr-logs',
-                ReleaseLabel='emr-6.3.0',
+                ReleaseLabel='emr-6.1.0',
                 Instances={
                     'InstanceGroups': [
                         {
@@ -42,7 +42,6 @@ def handler(event, context):
                     {'Name': 'Pig'},
                     {'Name': 'Hue'},
                     {'Name': 'JupyterHub'},
-                    {'Name': 'JupyterEnterpriseGateway'},
                     {'Name': 'Livy'},
                 ],
 

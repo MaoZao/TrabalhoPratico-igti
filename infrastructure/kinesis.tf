@@ -19,7 +19,6 @@
  }
  
 
-
  resource "aws_iam_role" "firehose_role" {
    name = "IGTI_firehose_role"
 

@@ -75,6 +75,7 @@ resource "aws_iam_role_policy_attachment" "lambda_attach" {
   policy_arn = aws_iam_policy.lambda.arn
 }
 
+
 #############
 ## KINESIS ##
 #############
@@ -84,7 +85,7 @@ resource "aws_iam_policy" "firehose" {
   path        = "/"
   description = "Provides write permissions to CloudWatch Logs and S3"
 
-   policy = <<EOF
+  policy = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -126,7 +127,6 @@ resource "aws_iam_role_policy_attachment" "firehose_attach" {
   policy_arn = aws_iam_policy.firehose.arn
 }
 
-
 ###############
 ## GLUE ROLE ##
 ###############
@@ -156,7 +156,6 @@ EOF
   }
 
 }
-
 
 resource "aws_iam_policy" "glue_policy" {
   name        = "IGTIAWSGlueServiceRole"

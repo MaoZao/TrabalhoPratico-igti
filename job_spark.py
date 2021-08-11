@@ -1,13 +1,12 @@
-# Comentário para modificar o arquivo .py
+# Comentario para modificar o arquivo
 from pyspark.sql.functions import mean, max, min, col, count
 from pyspark.sql import SparkSession
 
 spark = (
-    SparkSession.builder.appName("ExerciseSpark")
+    SparkSession.builder.appName("ExcerciseSpark")
     .getOrCreate()
 )
 
-# Ler os dados do enem 2019
 enem = (
     spark
     .read
@@ -15,9 +14,8 @@ enem = (
     .option("header", True)
     .option("inferSchema", True)
     .option("delimiter", ";")
-    .load("s3://datalake-ney-igti-edc/raw-data/enem/")
+    .load("s3://datalake-psalomao-igti/raw-data/enem")
 )
-
 
 (
     enem
@@ -25,5 +23,5 @@ enem = (
     .mode("overwrite")
     .format("parquet")
     .partitionBy("year")
-    .save("s3://datalake-ney-igti-edc/staging/enem")
+    .save("s3://datalake-psalomao-igti/staging/enem")
 )
